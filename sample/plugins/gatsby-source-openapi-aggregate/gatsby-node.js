@@ -62,8 +62,8 @@ const toNode = (data, type) => {
   return node
 }
 
-exports.sourceNodes = async ({ boundActionCreators }, options) => {
-  const { createNode } = boundActionCreators
+exports.sourceNodes = async ({ actions, boundActionCreators }, options) => {
+  const { createNode } = actions || boundActionCreators
 
   // TODO: validate options [{ name, resolve }]
   // each name should be unique, only name and resolve properties should be present
